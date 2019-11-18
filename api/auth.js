@@ -1,6 +1,6 @@
 const express = require('express');
 
-const sql = require('mysql');
+const sql = require('mysql2');
 
 const connection = sql.createPool({
     host: 'localhost',
