@@ -280,6 +280,11 @@ async function search(name, pass) { // 檢查登入資訊
     connection.query('SELECT * FROM `user` WHERE username= ?', [name], async (err, result) => {
       if (err) throw err;
       console.log(result[0]);
+      if(!result[0]){
+        resolve({
+          truth: false
+        });
+      }
       if (result[0].username == name && result[0].password == pass) {
         resolve({
           truth: true,
